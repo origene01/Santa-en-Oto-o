@@ -170,8 +170,30 @@ nav {
 .header__content p {
   margin-bottom: 2rem;
   color: var(--text-light);
+  display: none;
 }
 
+.texto {
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 3.2s;
+}
+
+.btnmain{
+ display: flex;
+ justify-content: center;
+ width: 50%;
+  
+}
+
+@media (width < 580px) {
+  .btnmain{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+     
+   }
+}
 .header__image {
   position: relative;
 }

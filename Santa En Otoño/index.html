@@ -29,12 +29,13 @@
       <span class="bg__blur header__blur"></span>
       <h4>La mejor comunidad de aprendizaje en línea</h4>
       <h1><span>SANTA EN</span> OTOÑO</h1>
-      <p>
-        Santa En Otoño es una comunidad que brinda una
-        suscripción mensual a Udemy en donde tienes acceso a miles de cursos en línea, cursos de alto valor por el
-        precio de 350 pesos dominicanos en adelante.
-      </p>
-      <a href="https://forms.gle/vTYeuM93UkSpApX16" class="btn">Obtener Plan YA!</a>
+      <div id="textoAnimado">
+        <p>Santa En Otoño es una comunidad que brinda una
+          suscripción mensual a Udemy en donde tienes acceso a miles de cursos en línea, cursos de alto valor por el
+          precio de 350 pesos dominicanos en adelante.</p>
+      </div>
+
+      <a href="https://forms.gle/vTYeuM93UkSpApX16" class="btn btnmain">Obtener Plan YA!</a>
     </div>
     <div class="header__image">
       <img src="assets/header.png" alt="header" />
@@ -155,7 +156,7 @@
         un precio sumamente barato, con el que puedes estudiar una nueva habilidad o diciplina en cualquier hora del
         día.
       </p>
-      <a href="#planes" class="btn" >Ver planes</a>
+      <a href="#planes" class="btn">Ver planes</a>
     </div>
   </section>
 
@@ -202,11 +203,11 @@
   </section>
 
   <section class="section__container price__container">
-    <h2 class="section__header"id="planes">NUESTROS PLANES</h2>
+    <h2 class="section__header" id="planes">NUESTROS PLANES</h2>
     <p class="section__subheader">
       Nuestros planes ideales para ti
     </p>
-    <div class="price__grid" >
+    <div class="price__grid">
       <div class="price__card">
         <div class="price__card__content">
           <h4>Plan Básico</h4>
@@ -275,11 +276,11 @@
     </div>
   </section>
 
-  <section class="review" >
+  <section class="review">
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSdlM2fAUS-S6b4ETvMx8nyqWDq0GSuPdexxZ6MJ3ESzxN793A/viewform?embedded=true"
       width="1440" height="1239" frameborder="0" marginheight="0" marginwidth="0" class="comentarios">Cargando…</iframe>
-    <div class="section__container review__container"id="testimonio">
+    <div class="section__container review__container" id="testimonio">
       <span><i class="ri-double-quotes-r"></i></span>
       <div class="review__content">
         <h4>TESTIMONIOS</h4>
@@ -346,6 +347,40 @@
   <div class="footer__bar">
     Copyright © 2024 Origenes FF. Todos los derechos son reservados.
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var textos = [
+        "Santa En Otoño es una comunidad que brinda una suscripción mensual a Udemy en donde tienes acceso a miles de cursos en línea, cursos de alto valor por el precio de 350 pesos dominicanos en adelante.",
+        "Encuentra lo que te apasiona y aprende en línea por el precio de una hamburguesa 🍔 🥰"
+      ];
+      var index = 0;
+      var container = document.getElementById("textoAnimado");
+
+
+      function mostrarSiguienteTexto() {
+    if (index < textos.length) {
+      container.innerHTML = "";
+      var span = document.createElement("span");
+      span.style.fontSize="18px";
+      span.style.fontFamily="Poppins, sans-serif";
+      span.classList.add("texto");
+      span.textContent = textos[index];
+      container.appendChild(span);
+      setTimeout(function() {
+        span.style.opacity = 1;
+        index++;
+        setTimeout(mostrarSiguienteTexto, 6000); // Cambiar a la duración deseada
+      }, 100);
+    } else {
+      index = 0;
+      setTimeout(mostrarSiguienteTexto, 0); // Empezar de nuevo inmediatamente
+    }
+  }
+
+  mostrarSiguienteTexto();
+});
+  </script>
 </body>
 
 </html>
